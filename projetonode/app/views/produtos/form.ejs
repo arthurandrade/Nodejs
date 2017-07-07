@@ -5,18 +5,27 @@
     <title>Cadastro</title>
   </head>
   <body>
-    <form class="" action="produtos/salva" method="post">
+    <div class="erros">
+      <%if(errosValidacao){%>
+        <ul>
+          <%for(var i=0; i< errosValidacao.length; i++) {%>
+            <li><%=errosValidacao[i].param%> - <%=errosValidacao[i].msg%></li>
+          <%}%>
+        </ul>
+      <%}%>
+    </div>
+    <form action="/produtos" method="post">
       <div>
-        <label for="titulo">Titulo: </label>
+        <label for="titulo">Titulo</label>
         <input type="text" id="titulo" name="titulo" placeholder="Coloque o titulo aqui!" value=""/>
       </div>
       <div>
-        <label for="preco">Preço: </label>
+        <label for="preco">Preço</label>
         <input type="text" id="preco" name="preco" placeholder="150.25" value=""/>
       </div>
       <div>
-        <label for="descricao">Descrição: </label>
-        <textarea cols="20" rows="10" id="descricao" name="descricao" placeholder="Fale sobre o livro" value=""></textarea>
+        <label for="descricao">Descrição</label>
+        <textarea cols="10" rows="10" id="descricao" name="descricao" placeholder="Fale sobre o livro" value=""></textarea>
       </div>
       <input type="submit" value="gravar"/>
     </form>
