@@ -21,7 +21,7 @@ var client = http.request(configuracoes, function(res) {
 var produto = {
   titulo: 'mas sobre node.',
   descricao: 'node, js e um pouco sobre http',
-  preco: 100
+  preco: 'gd'
 };
 
 client.end(JSON.stringify(produto));
