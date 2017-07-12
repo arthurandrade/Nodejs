@@ -1,4 +1,3 @@
-
 module.exports = function(app) {
     var listaProdutos = function(req, res, next) {
       var connection = app.infra.connectionFactory();
@@ -16,7 +15,6 @@ module.exports = function(app) {
             res.json(resultados);
           }
         });
-
       });
       connection.end();
     };
@@ -32,6 +30,7 @@ module.exports = function(app) {
 
       req.assert('titulo','Titulo é obrigatório').notEmpty();
       req.assert('preco','Formato inválido').isFloat();
+
       var erros = req.validationErrors();
       if(erros){
         res.format({
@@ -42,7 +41,6 @@ module.exports = function(app) {
             res.status(400).json(erros);
           }
         });
-
         return;
       }
 
