@@ -1,0 +1,3 @@
+{"level":"info","message":"::1 - - [18/Jul/2017:15:14:26 +0000] \"GET /payments/payment HTTP/1.1\" 404 155\n","timestamp":"2017-07-18T15:14:26.906Z"}
+{"level":"info","message":"::1 - - [18/Jul/2017:15:16:47 +0000] \"GET /payments HTTP/1.1\" - -\n","timestamp":"2017-07-18T15:16:47.208Z"}
+{"level":"info","message":"::1 - - [18/Jul/2017:15:18:47 +0000] \"GET /payments HTTP/1.1\" - -\n","timestamp":"2017-07-18T15:18:47.220Z"}
