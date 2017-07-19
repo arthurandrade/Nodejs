@@ -1,3 +1,8 @@
 {"level":"info","message":"::1 - - [18/Jul/2017:15:14:26 +0000] \"GET /payments/payment HTTP/1.1\" 404 155\n","timestamp":"2017-07-18T15:14:26.906Z"}
 {"level":"info","message":"::1 - - [18/Jul/2017:15:16:47 +0000] \"GET /payments HTTP/1.1\" - -\n","timestamp":"2017-07-18T15:16:47.208Z"}
 {"level":"info","message":"::1 - - [18/Jul/2017:15:18:47 +0000] \"GET /payments HTTP/1.1\" - -\n","timestamp":"2017-07-18T15:18:47.220Z"}
+{"level":"info","message":"::1 - - [19/Jul/2017:00:34:42 +0000] \"GET /payments HTTP/1.1\" 200 750\n","timestamp":"2017-07-19T00:34:42.166Z"}
+{"level":"info","message":"::1 - - [19/Jul/2017:00:34:56 +0000] \"POST /payments/payment HTTP/1.1\" 201 363\n","timestamp":"2017-07-19T00:34:56.264Z"}
+{"level":"info","message":"::1 - - [19/Jul/2017:00:35:12 +0000] \"DELETE /payments/payment/4 HTTP/1.1\" 200 152\n","timestamp":"2017-07-19T00:35:12.036Z"}
+{"level":"info","message":"::1 - - [19/Jul/2017:00:37:09 +0000] \"POST /payments/payment HTTP/1.1\" 201 469\n","timestamp":"2017-07-19T00:37:09.794Z"}
+{"level":"info","message":"::1 - - [19/Jul/2017:00:37:25 +0000] \"POST /payments/payment HTTP/1.1\" 201 469\n","timestamp":"2017-07-19T00:37:25.175Z"}

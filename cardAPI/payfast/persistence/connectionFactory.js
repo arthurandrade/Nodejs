@@ -9,6 +9,6 @@ function createDBConnection(){
     })
 }
 
-module.exports = function() {
-	return createDBConnection;
-}
+const con = createDBConnection();
+
+module.exports = con;

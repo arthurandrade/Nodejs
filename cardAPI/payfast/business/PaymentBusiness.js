@@ -12,7 +12,7 @@ PaymentBusiness.prototype = {
         return new PaymentDao().list();
     },
     update: function(payment) {   
-        return new PaymentDao().update(payment);
+        return new PaymentDao().update(payment).then(() => this.searchID(payment.id));
     },
     searchID: function(id) {   
         return new PaymentDao().searchID(id);
@@ -39,4 +39,3 @@ function validCard(card){
 module.exports = function(){
     return PaymentBusiness;
 }
-

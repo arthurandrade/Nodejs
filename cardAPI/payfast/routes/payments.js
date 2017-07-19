@@ -11,40 +11,38 @@ module.exports = function(app) {
     app.delete('/payments/payment/:id', function(req, res){
         var payment = {};
         payment.id = req.params.id;
-        payment.status = 'CANCELADO';
+        payment.status = 'CANCELED';
         var paymentBusiness = new app.business.PaymentBusiness(app);
-        paymentBusiness.update(payment).then(paymentBusiness.searchID(payment.id)).then(function(result){
-                            res.status(200).send(result);
-                       });
+        paymentBusiness.update(payment)                 
+          .then(function(result) {
+            console.log(result);
+            res.status(200).json(result);
+        });
         
   });
 
   app.get('/payments/payment/:id', function(req, res) {
 
         var paymentBusiness = new app.business.PaymentBusiness(app);
-        paymentBusiness.searchID(req.params.id).then(function(result){
-                            res.status(200).send(result);
-                       });
-        
+        paymentBusiness.searchID(req.params.id)
+        .then(function(result){
+            res.status(200).send(result);
+        });
   });
 
   app.post('/payments/payment', function(req, res) {
        
-        var data = req.body
-        data.payment.status = 'CRIADO';
-        data.payment.date = new Date;
-
-        var paymentBusiness = new app.business.PaymentBusiness(app);
-        paymentBusiness.processesPayment(data).then(function(result){
-              data.payment.id = result.insertId            
-              buildResponse(data, res)
-                       });
-        
+    var data = req.body
+    data.payment.status = 'CREATED';
+    data.payment.date = new Date;
+    var paymentBusiness = new app.business.PaymentBusiness(app);
+    paymentBusiness.processesPayment(data).then(function(result){
+      data.payment.id = result.insertId;         
+      buildResponse(data, res);
+    });
   });
 
   function buildResponse (data, res) {
-
-    
     var response = {
       dados_do_pagamanto: data.payment,
       card: data.card,
